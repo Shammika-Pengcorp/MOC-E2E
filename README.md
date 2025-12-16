@@ -1,9 +1,16 @@
 # MOC E2E Playwright Tests ✅
 
-This repository contains end-to-end automation tests for MOC (Management of Change) system using Playwright + TypeScript with Page Object Model (POM) pattern.
+End-to-end automation tests for MOC (Management of Change) system using Playwright + TypeScript with Page Object Model (POM) pattern.
+
+---
+
+## 📊 [👉 VIEW LATEST ORTONI REPORT 📈](https://github.com/Shammika-Pengcorp/MOC-E2E/actions?query=workflow%3A%22MOC+E2E+Test+Suite%22)
+
+**Click above to view comprehensive test reports with 25+ test cases**
+
+---
 
 **🔗 Quick Links:**
-- **📊 [View Latest Test Report](https://github.com/Shammika-Pengcorp/MOC-E2E/actions?query=workflow%3A%22MOC+E2E+Test+Suite%22)** ⭐
 - [GitHub Repository](https://github.com/Shammika-Pengcorp/MOC-E2E)
 - [GitHub Actions](https://github.com/Shammika-Pengcorp/MOC-E2E/actions)
 

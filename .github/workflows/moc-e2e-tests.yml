@@ -40,24 +40,8 @@ jobs:
       - name: Install Ortoni Report globally
         run: npm install -g ortoni-report
 
-      - name: Run MOC Requester Test (Test 1)
-        run: npx playwright test "src/tests/01-moc-requester.spec.ts" --workers=1
-        continue-on-error: true
-
-      - name: Run MOC Coordinator Test (Test 2)
-        run: npx playwright test "src/tests/02-moc-coordinator.spec.ts" --workers=1
-        continue-on-error: true
-
-      - name: Run MOC Acceptor Test (Test 3)
-        run: npx playwright test "src/tests/03-moc-acceptor.spec.ts" --workers=1
-        continue-on-error: true
-
-      - name: Run MOC Owner Section 3 Test (Test 4)
-        run: npx playwright test "src/tests/04-moc-owner-section3.spec.ts" --workers=1
-        continue-on-error: true
-
-      - name: Run MOC Owner Section 4 Test (Test 5)
-        run: npx playwright test "src/tests/05-moc-owner-section4.spec.ts" --workers=1
+      - name: Run All Tests
+        run: npx playwright test src/tests/*.spec.ts --workers=1
         continue-on-error: true
 
       - name: Merge Ortoni Reports
