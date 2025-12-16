@@ -1,6 +1,11 @@
 # MOC E2E Playwright Tests ✅
 
-This repository contains a small Playwright + TypeScript test scaffold using Page Object Model (POM) and a login test for https://moc.otdm.ca.
+This repository contains end-to-end automation tests for MOC (Management of Change) system using Playwright + TypeScript with Page Object Model (POM) pattern.
+
+**🔗 Quick Links:**
+- [View Latest Test Report](#-view-reports-now) 
+- [GitHub Repository](https://github.com/Shammika-Pengcorp/MOC-E2E)
+- [GitHub Actions](https://github.com/Shammika-Pengcorp/MOC-E2E/actions)
 
 ## Setup
 
@@ -32,7 +37,37 @@ npm run test:headed
 - `src/tests/login.spec.ts` — Test using the POM
 - `playwright.config.ts` — Playwright configuration (baseURL set to `https://moc.otdm.ca`)
 
-## 📊 Viewing Test Reports
+## 📊 View Reports Now
+
+### 🚀 View Latest Ortoni Report
+After GitHub Actions completes, **click the link below** to view the report:
+
+👉 **[View Ortoni Report - Latest Run](https://github.com/Shammika-Pengcorp/MOC-E2E/actions/runs/latest)**
+
+**Steps:**
+1. Click link above → Go to Actions
+2. Click the **latest workflow run** at the top
+3. Scroll to **"Artifacts"** section
+4. Download **`ortoni-report.zip`** (single file)
+5. Extract and open **`ortoni-report.html`** in browser
+
+### Direct Links
+
+- **[GitHub Actions](https://github.com/Shammika-Pengcorp/MOC-E2E/actions)** - View all workflow runs
+- **[Latest Test Run](https://github.com/Shammika-Pengcorp/MOC-E2E/actions?query=workflow%3A%22MOC+E2E+Test+Suite%22)** - Direct link to test workflow
+
+### Local Test Reports
+
+Run tests locally to view reports immediately:
+
+```powershell
+npm test
+
+# Open Ortoni Report
+.\ortoni-report\ortoni-report.html
+```
+
+## 📊 Old Report Format
 
 ### GitHub Actions Workflow Reports
 
@@ -44,7 +79,7 @@ After running tests via GitHub Actions, access reports:
 
 2. **View Ortoni Report**
    - Scroll down to **"Artifacts"** section
-   - Download `ortoni-report-*.zip` (multiple versions for different Node versions)
+   - Download **`ortoni-report.zip`** (single combined artifact)
    - Extract the ZIP file
    - Open `ortoni-report.html` in your browser
 
