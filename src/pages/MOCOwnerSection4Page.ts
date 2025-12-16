@@ -31,17 +31,16 @@ export class MOCOwnerSection4Page {
   }
 
   /**
-   * Navigate to All eMOCs tab
+   * Navigate to All MOCs tab
    */
   async navigateToMOCList() {
     console.log('Navigating to MOC List...');
     await this.page.waitForLoadState('networkidle');
     
-    const allEmocTab = this.page.getByRole('tab', { name: 'All eMOCs' });
-    await allEmocTab.waitFor({ state: 'visible', timeout: 10000 });
-    await allEmocTab.click();
+    // Click on "All MOCs" tab
+    await this.page.getByRole('tab', { name: 'All MOCs' }).click();
     
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForTimeout(1000);
     console.log('✓ Navigated to MOC List');
   }
 
@@ -51,20 +50,28 @@ export class MOCOwnerSection4Page {
   async searchMOCById(mocId: string) {
     console.log(`Searching for MOC: ${mocId}`);
     
-    const searchField = this.page.getByRole('textbox', { name: 'Search eMOCs...' });
-    await searchField.waitFor({ state: 'visible', timeout: 10000 });
-    await searchField.click();
+    // Click on search field
+    await this.page.getByRole('textbox', { name: 'Search eMOCs...' }).click();
     await this.page.waitForTimeout(300);
     
-    await searchField.fill('');
-    await this.page.waitForTimeout(200);
-    await searchField.fill(mocId);
-    await this.page.waitForTimeout(800);
-    
-    await searchField.press('Enter');
-    await this.page.waitForTimeout(1500);
+    // Fill MOC ID
+    await this.page.getByRole('textbox', { name: 'Search eMOCs...' }).fill(mocId);
+    await this.page.waitForTimeout(500);
     
     console.log(`✓ Searched for MOC: ${mocId}`);
+  }
+
+  /**
+   * Click the search/filter button to execute search
+   */
+  async executeSearch() {
+    console.log('Executing search...');
+    
+    // Click the filter button (nth(2))
+    await this.page.getByRole('button', { name: 'Button' }).nth(2).click();
+    await this.page.waitForTimeout(2000);
+    
+    console.log('✓ Search executed');
   }
 
   /**

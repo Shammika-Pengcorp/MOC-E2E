@@ -45,6 +45,9 @@ test.describe('MOC - Owner Section 4 Workflow', () => {
     // Search for MOC
     await section4Page.searchMOCById(mocId);
 
+    // Execute search
+    await section4Page.executeSearch();
+
     // Open MOC Details
     await section4Page.openMOCDetails(mocId);
 
@@ -79,5 +82,90 @@ test.describe('MOC - Owner Section 4 Workflow', () => {
     console.log('✓ Section 4 content is accessible and visible');
 
     console.log('✓ Section 4 verification completed successfully');
+
+    await page.getByRole('button', { name: 'Submit', exact: true }).click();
+await expect(page.getByRole('alert')).toContainText('Submit for Planning successfully.');
+
+
+await page.locator('#mocExecutionPlanningChangeType').getByRole('button', { name: 'Select an option' }).click();
+await page.locator('#mocExecutionPlanningChangeType').getByRole('button', { name: 'Select an option' }).click();
+await page.locator('#mocExecutionPlanningChangeType').getByRole('button', { name: 'Select an option' }).click();
+await page.getByText('Equipment replacement').click();
+await page.locator('#mocExecutionPlanningChangeDriver').getByRole('button', { name: 'Select an option' }).click();
+await page.getByRole('option', { name: 'Economical' }).click();
+await page.locator('#mocExecutionPlanningProjectType').getByRole('button', { name: 'Select an option' }).click();
+await page.getByText('Facility infrastructure').click();
+await page.locator('#mocExecutionPlanningComplexity').getByRole('button', { name: 'Select an option' }).click();
+await page.getByRole('option', { name: 'Low' }).click();
+await page.locator('#mocExecutionPlanningCost').click();
+await page.locator('#mocExecutionPlanningCost').fill('44');
+await page.locator('#mocExecutionPlanningStakeholderImpact').getByRole('button', { name: 'Select an option' }).click();
+await page.getByLabel('Low').click();
+await page.locator('#mocExecutionPlanningRanking').getByRole('button', { name: 'Select an option' }).click();
+await page.getByRole('option', { name: 'Ranking 1' }).click();
+await page.locator('#mocRankingRemarks').click();
+await page.locator('#mocRankingRemarks').fill('execution plan - phase 1');
+await page.getByRole('button', { name: 'Add Activity' }).click();
+await page.locator('#title').click();
+await page.locator('#title').fill('Actiity 2027-phase 1');
+
+
+
+
+
+
+await page.locator('#activityType > .p-dropdown-trigger').click();
+await page.getByRole('option', { name: 'Field activities' }).click();
+await page.locator('#performedBy > .p-dropdown-trigger').click();
+await page.getByRole('option', { name: 'Plant operators' }).click();
+await page.getByRole('button', { name: '0d 0h' }).click();
+await page.locator('.pengcorp-duration-overlay-days > button').first().dblclick();
+await page.locator('.pengcorp-duration-overlay-days > button').first().click();
+await page.getByRole('spinbutton', { name: 'Month' }).first().click();
+await page.getByRole('spinbutton', { name: 'Month' }).first().fill('11');
+await page.getByRole('group').filter({ hasText: '11/DD/YYYY' }).getByLabel('Day').fill('11');
+await page.getByRole('group').filter({ hasText: '/11/YYYY' }).getByLabel('Year').fill('2028');
+await page.getByText('MM', { exact: true }).click();
+await page.getByText('MM', { exact: true }).fill('11');
+await page.getByText('DD', { exact: true }).fill('11');
+await page.getByText('YYYY', { exact: true }).fill('2029');
+await page.locator('#description').click();
+await page.locator('#description').fill('activity 2027 description');
+await page.getByRole('button', { name: 'Add to Summary' }).click();
+await page.getByRole('button', { name: 'Save' }).click();
+
+
+
+
+await page.getByRole('radio', { name: 'No', exact: true }).check();
+await page.getByRole('button', { name: 'Add Milestone' }).click();
+await page.locator('#title').click();
+await page.locator('#title').fill('Milestone 1');
+await page.locator('#milestonetype > .p-dropdown-trigger').click();
+await page.getByRole('option', { name: 'Engineering' }).click();
+await page.getByRole('spinbutton', { name: 'Month' }).click();
+await page.getByRole('spinbutton', { name: 'Month' }).fill('1');
+await page.getByRole('spinbutton', { name: 'Day' }).fill('1');
+await page.getByRole('spinbutton', { name: 'Year' }).fill('2029');
+await page.locator('#eventPredecessor > .p-dropdown-trigger').click();
+await page.getByRole('option', { name: 'Actiity 2027-phase' }).click();
+
+
+await page.locator('#description').click();
+await page.locator('#description').fill('Milestone 1 description');
+
+
+await page.getByRole('button', { name: 'Add to Summary' }).click();
+await page.getByRole('button', { name: 'Save' }).click();
+
+
+await page.locator('#mocExecutionPlanningMocApprover > .p-dropdown-trigger').click();
+await page.locator('.p-dropdown-filter').click();
+await page.locator('.p-dropdown-filter').fill('approve');
+await page.getByRole('option', { name: 'MOC Approver1' }).click();
+await page.locator('#btnSubmitForApprovalSection4').click();
+await page.waitForTimeout(1000);
+await expect(page.getByRole('alert')).toContainText('Submit for Approval successfully.');
   });
+
 });

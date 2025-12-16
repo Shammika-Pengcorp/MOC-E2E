@@ -59,6 +59,7 @@ test.describe('MOC - Owner Section 3 Workflow', () => {
     // First navigate to MOC List and search for the MOC (as in test-3)
     await ownerSection3.navigateToMOCList();
     await ownerSection3.searchMOCById(mocNumber);
+    await ownerSection3.executeSearch();
     await ownerSection3.openMOCDetails(mocNumber);
     
     // Complete Section 3

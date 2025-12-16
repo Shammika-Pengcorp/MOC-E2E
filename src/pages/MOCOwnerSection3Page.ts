@@ -34,19 +34,14 @@ export class MOCOwnerSection3Page {
   }
 
   /**
-   * Navigate to MOC List - All eMOCs tab
+   * Navigate to MOC List - All MOCs tab
    */
   async navigateToMOCList() {
     // Wait for the page to load
     await this.page.waitForLoadState('networkidle');
     
-    // Click on "All eMOCs" tab
-    const allEmocTab = this.page.getByRole('tab', { name: 'All eMOCs' });
-    await allEmocTab.waitFor({ state: 'visible', timeout: 10000 });
-    await allEmocTab.click();
-    
-    // Wait for MOC List to be visible
-    await expect(this.page.getByText('MOC List')).toBeVisible({ timeout: 10000 });
+    // Click on "All MOCs" tab
+    await this.page.getByRole('tab', { name: 'All MOCs' }).click();
     await this.page.waitForTimeout(1000);
   }
 
@@ -57,22 +52,27 @@ export class MOCOwnerSection3Page {
     console.log(`Searching for MOC: ${mocId}`);
     
     // Click on search field
-    const searchField = this.page.getByRole('textbox', { name: 'Search eMOCs...' });
-    await searchField.waitFor({ state: 'visible', timeout: 10000 });
-    await searchField.click();
+    await this.page.getByRole('textbox', { name: 'Search eMOCs...' }).click();
+    await this.page.waitForTimeout(300);
+    
+    // Fill MOC ID
+    await this.page.getByRole('textbox', { name: 'Search eMOCs...' }).fill(mocId);
     await this.page.waitForTimeout(500);
     
-    // Clear and type MOC ID
-    await searchField.fill('');
-    await this.page.waitForTimeout(300);
-    await searchField.fill(mocId);
-    await this.page.waitForTimeout(1000);
-    
-    // Press Enter to search
-    await searchField.press('Enter');
-    await this.page.waitForTimeout(1500);
-    
     console.log(`✓ Searched for MOC: ${mocId}`);
+  }
+
+  /**
+   * Click the search/filter button to execute search
+   */
+  async executeSearch() {
+    console.log('Executing search...');
+    
+    // Click the filter button (nth(2))
+    await this.page.getByRole('button', { name: 'Button' }).nth(2).click();
+    await this.page.waitForTimeout(2000);
+    
+    console.log('✓ Search executed');
   }
 
   /**
@@ -141,6 +141,8 @@ export class MOCOwnerSection3Page {
     await applyBtn.waitFor({ state: 'visible', timeout: 5000 });
     await applyBtn.click();
     await this.page.waitForTimeout(1000);
+
+    await this.page.getByRole('button', { name: 'Add to Summary' }).click();
     
     // Click Save button to close modal
     const saveBtn = this.page.getByRole('button', { name: 'Save' });
