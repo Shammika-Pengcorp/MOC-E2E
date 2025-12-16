@@ -1,0 +1,115 @@
+
+Running 1 test using 1 worker
+
+Γ£ô Retrieved MOC number from file: eMOC_000640
+
+Logging in as owner with user: moc_owner1
+Γ£ô Logged in successfully as owner
+
+Starting Section 3 workflow for MOC: eMOC_000640
+Searching for MOC: eMOC_000640
+Γ£ô Searched for MOC: eMOC_000640
+Opening MOC details...
+Γ£ô MOC details opened
+
+=== Starting MOC Owner Section 3 Workflow for eMOC_000640 ===
+Adding stakeholder: MOC Asset Owners1 with role: Endorse
+Γ£ô Stakeholder added: MOC Asset Owners1 as Endorse
+Filling Plan Document section...
+Filling plan date: 01/01/2027
+Γ£ô Plan date filled
+Γ£ô Plan Document section filled
+Adding Plan Document to Summary...
+Γ£ô Plan Document added to summary and saved
+Suggesting Assessment Methods...
+  Γ£ÿ  1 [chromium] ΓÇ║ src\tests\04-moc-owner-section3.spec.ts:11:7 ΓÇ║ MOC - Owner Section 3 Workflow ΓÇ║ should fill and submit Section 3 as MOC Owner (52.8s)
+
+
+  1) [chromium] ΓÇ║ src\tests\04-moc-owner-section3.spec.ts:11:7 ΓÇ║ MOC - Owner Section 3 Workflow ΓÇ║ should fill and submit Section 3 as MOC Owner 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Suggest Assessment Method(s)' })[22m
+    [2m    - locator resolved to <button data-pc-name="button" data-pc-section="root" aria-label="Suggest Assessment Method(s)" class="pengcorp-button-regular btn-has-tooltip regular-border   p-button p-component p-button-rounded">ΓÇª</button>[22m
+    [2m  - attempting click action[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <div class="pengcorp-custom-modal-section ">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <div class="pengcorp-modal-action-buttons">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <div tabindex="0" contenteditable="false" class="MuiPickersSectionList-root MuiPickersInputBase-sectionsContainer css-1fd5m8u">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  2 ├ù retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div class="pengcorp-fieldset-title">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  4 ├ù retrying click action[22m
+    [2m      - waiting 500ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div class="pengcorp-modal-action-buttons">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 500ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div tabindex="0" contenteditable="false" class="MuiPickersSectionList-root MuiPickersInputBase-sectionsContainer css-1fd5m8u">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 500ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div class="pengcorp-fieldset-title">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 500ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div class="pengcorp-fieldset-title">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting 500ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <div class="pengcorp-modal-action-buttons">ΓÇª</div> from <div data-pc-section="mask" class="p-dialog-mask p-dialog-center p-component-overlay p-component-overlay-enter p-dialog-draggable p-dialog-resizable">ΓÇª</div> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting 500ms[22m
+
+
+       at ..\pages\MOCOwnerSection3Page.ts:300
+
+      298 |     const suggestBtn = this.page.getByRole('button', { name: 'Suggest Assessment Method(s)' });
+      299 |     await suggestBtn.waitFor({ state: 'visible', timeout: 10000 });
+    > 300 |     await suggestBtn.click();
+          |                      ^
+      301 |     await this.page.waitForTimeout(1500);
+      302 |     
+      303 |     // Select various assessment options (based on test-3 recording)
+        at MOCOwnerSection3Page.suggestAssessmentMethods (C:\Users\ShammikaDahanayaka\OneDrive - Pengcorp LTD\MOC-E2E\src\pages\MOCOwnerSection3Page.ts:300:22)
+        at MOCOwnerSection3Page.completeSection3 (C:\Users\ShammikaDahanayaka\OneDrive - Pengcorp LTD\MOC-E2E\src\pages\MOCOwnerSection3Page.ts:510:5)
+        at C:\Users\ShammikaDahanayaka\OneDrive - Pengcorp LTD\MOC-E2E\src\tests\04-moc-owner-section3.spec.ts:65:32
+
+    Error Context: test-results\04-moc-owner-section3-MOC--769cd-bmit-Section-3-as-MOC-Owner-chromium\error-context.md
+
+  1 failed
+    [chromium] ΓÇ║ src\tests\04-moc-owner-section3.spec.ts:11:7 ΓÇ║ MOC - Owner Section 3 Workflow ΓÇ║ should fill and submit Section 3 as MOC Owner 

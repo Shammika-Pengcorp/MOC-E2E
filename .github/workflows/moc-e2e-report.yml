@@ -1,0 +1,68 @@
+name: MOC E2E Tests - Extended Report
+
+on:
+  workflow_run:
+    workflows: ["MOC E2E Test Suite"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  generate-report:
+    name: Generate Extended Test Report
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: test-artifacts
+
+      - name: Generate Report Summary
+        run: |
+          echo "# MOC E2E Test Suite - Comprehensive Report" > report-summary.md
+          echo "" >> report-summary.md
+          echo "## Execution Details" >> report-summary.md
+          echo "- **Run Number**: ${{ github.run_number }}" >> report-summary.md
+          echo "- **Workflow**: ${{ github.workflow }}" >> report-summary.md
+          echo "- **Branch**: ${{ github.ref }}" >> report-summary.md
+          echo "- **Commit**: ${{ github.sha }}" >> report-summary.md
+          echo "- **Timestamp**: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> report-summary.md
+          echo "" >> report-summary.md
+          echo "## Test Modules" >> report-summary.md
+          echo "1. **MOC Requester** - Creates MOC request" >> report-summary.md
+          echo "2. **MOC Coordinator** - Reviews and approves MOC" >> report-summary.md
+          echo "3. **MOC Acceptor** - Asset owner acceptance" >> report-summary.md
+          echo "4. **MOC Owner Section 3** - Technical evaluation & risk assessment" >> report-summary.md
+          echo "5. **MOC Owner Section 4** - Execution planning verification" >> report-summary.md
+          echo "" >> report-summary.md
+          echo "## Artifacts Generated" >> report-summary.md
+          echo "- Ortoni Report" >> report-summary.md
+          echo "- Playwright HTML Report" >> report-summary.md
+          echo "- Screenshots & Videos" >> report-summary.md
+          echo "- Test Traces" >> report-summary.md
+          echo "" >> report-summary.md
+          echo "## Deployment" >> report-summary.md
+          echo "Reports are available at: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/" >> report-summary.md
+
+      - name: Upload Report Summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-summary
+          path: report-summary.md
+
+  notify:
+    name: Send Notifications
+    runs-on: ubuntu-latest
+    needs: generate-report
+    if: always()
+
+    steps:
+      - name: Test Status
+        run: |
+          echo "✅ MOC E2E Test Suite Execution Complete"
+          echo "Run: ${{ github.run_number }}"
+          echo "Status: ${{ job.status }}"

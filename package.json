@@ -1,0 +1,16 @@
+{
+  "name": "moc-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "install:browsers": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "ortoni-report": "^4.0.1",
+    "typescript": "^5.0.0"
+  }
+}
